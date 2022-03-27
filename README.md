@@ -61,7 +61,11 @@ The application does not have to do *too much* differently to load via the
 bootloader, but it must update the memory layout in its linker script to 
 put the application code at the right spot.
 
-Here's an example memory layout:
+Here's an example memory layout, which works with the default PROGRAM_START_PAGE
+value of 32. FLASH_BOOT is where the bootloader lives, FLASH_CFG1 and FLASH_CFG2
+are used for dual-buffered application data storage, and FLASH is where the
+application code will live.
+
 ```
 MEMORY
 {
@@ -82,8 +86,8 @@ application, then dfu-util will be able to automatically send a detach
 command, so that the programming command will work whether your chip is 
 running the bootloader or the application.
 
-Rebooting to DFU is requires setting a magic number into the `GPBR[7]` 
-register, and resetting the processor:
+Rebooting to DFU is done by writing a magic number into the `GPBR[7]` 
+register, and resetting the processor. Like this:
 
 ```
 void reboot_to_bootloader() {
