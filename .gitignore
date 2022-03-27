@@ -1,0 +1,7 @@
+.sconsign.dblite
+.vscode
+app/build
+app/modm
+project.xml.log
+*.swp
+

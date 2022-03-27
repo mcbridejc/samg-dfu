@@ -1,0 +1,25 @@
+<library>
+  <repositories>
+    <repository>
+      <path>../ext/modm/repo.lb</path>
+    </repository>
+  </repositories>
+  <options>
+    <option name="modm:target">samg55j19a-au</option>
+    <option name="modm:build:project.name">dfu-samg</option>
+    <option name="modm:build:openocd.cfg">openocd.cfg</option>
+     <option name="modm:build:scons:include_sconstruct">False</option>
+  </options>
+  <modules>
+    <module>modm:tinyusb</module>
+    <module>modm:tinyusb:device</module>
+    <module>modm:tinyusb:device:dfu</module>
+    <module>modm:build:scons</module>
+    <module>modm:docs</module>
+    <module>modm:architecture:delay</module>
+    <module>modm:platform:clockgen</module>
+    <module>modm:platform:core</module>
+    <module>modm:platform:gpio</module>
+    <module>modm:platform:usb</module>
+  </modules>
+</library>

@@ -1,0 +1,3 @@
+
+#define CFG_TUD_DFU 1
+#define CFG_TUD_DFU_XFER_BUFSIZE 4096
