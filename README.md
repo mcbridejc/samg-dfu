@@ -25,7 +25,7 @@ if one of the following conditions are met:
 
 The SAMG55 watchdog is enabled by default, so if no valid application is programmed, the chip
 should reset after a few seconds and go back into DFU mode. However, there's a big caveat here: 
-If you place an external RC debounce on your reset pin with a rise time less than 1 SCLK 
+If you place an external RC debounce on your reset pin with a rise time longer than 1 SCLK 
 cycle (about 30us) this will prevent the reset controller status register from properly
 reporting a watchdog reset (per datasheet section 19.4.3.4).
 
